@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,600,700);
+
+$Lato: 'Lato', sans-serif;
+
+@mixin vendor-prefix($name, $argument) {
+  #{$name}: #{ $argument };
+  -webkit-#{$name}: #{ $argument };
+  -ms-#{$name}: #{ $argument };
+  -moz-#{$name}: #{ $argument };
+  -o-#{$name}: #{ $argument };
+}
+
+body {
+	font-family: 'Baskerville' !important;
+	line-height: 1.25em;
+	@include vendor-prefix(column-count, 3);
+	br {
+		content: '';
+		display: block;
+		margin: 0.25em;
+	}
+	h1 {
+		@include vendor-prefix(break-before, always);
+		font-weight: 600;
+	}
+}
+
+.Simple {
+	font-family: 'Helvetica', 'Arial', 'Tahoma';
+}
